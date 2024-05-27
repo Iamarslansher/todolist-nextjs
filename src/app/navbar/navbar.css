@@ -1,0 +1,76 @@
+/* components/Navbar.module.css */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #333;
+  padding: 1rem 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+}
+
+.profilePic {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 1rem;
+}
+
+.navLinks {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.navLink {
+  color: white;
+  text-decoration: none;
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.navLink span {
+  margin-left: 0.5rem;
+}
+
+.navLink:hover {
+  color: #ffa500;
+  transform: scale(1.1);
+}
+
+@media (max-width: 768px) {
+  .navLinks {
+    flex-direction: column;
+    background-color: #333;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 100%;
+    text-align: center;
+    display: none;
+    color: white;
+  }
+
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .profile {
+    margin-bottom: 1rem;
+  }
+
+  .navLinks.active {
+    display: flex;
+  }
+}
